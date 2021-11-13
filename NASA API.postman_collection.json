@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "3051ce5d-dac2-4879-9e7b-224f2c6ea808",
+		"name": "NASA API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "APOD 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"2021-07-20\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4&date=2021-07-20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						},
+						{
+							"key": "date",
+							"value": "2021-07-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APOD 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"url\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4&count=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						},
+						{
+							"key": "count",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo - Feed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"links\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"element_count\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-07-20&end_date=2021-07-26&api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"neo",
+						"rest",
+						"v1",
+						"feed"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2021-07-20"
+						},
+						{
+							"key": "end_date",
+							"value": "2021-07-26"
+						},
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"earth\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"url\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/earth/assets?lon=-95.33&lat=29.78&date=2020-01-01&&dim=0.10&api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"earth",
+						"assets"
+					],
+					"query": [
+						{
+							"key": "lon",
+							"value": "-95.33"
+						},
+						{
+							"key": "lat",
+							"value": "29.78"
+						},
+						{
+							"key": "date",
+							"value": "2020-01-01"
+						},
+						{
+							"key": null,
+							"value": ""
+						},
+						{
+							"key": "dim",
+							"value": "0.10"
+						},
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EPIC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This image was taken by NASA's EPIC camera onboard the NOAA DSCOVR spacecraft\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/EPIC/api/natural/images?api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4&natural/date=2020-07-20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"EPIC",
+						"api",
+						"natural",
+						"images"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						},
+						{
+							"key": "natural/date",
+							"value": "2020-07-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InSight",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"sol_keys\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"validity_checks\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"sol_hours_with_data\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/insight_weather/?api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4&feedtype=json&ver=1.0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"insight_weather",
+						""
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						},
+						{
+							"key": "feedtype",
+							"value": "json"
+						},
+						{
+							"key": "ver",
+							"value": "1.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mars Rover Photos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"photos\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"camera\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"img_src\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-07-20&api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"mars-photos",
+						"api",
+						"v1",
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "2021-07-20"
+						},
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mars Rover Photos Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=22222&api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"mars-photos",
+						"api",
+						"v1",
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "22222"
+						},
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TechTransfer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"results\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/techtransfer/patent/?engine&api_key=yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"techtransfer",
+						"patent",
+						""
+					],
+					"query": [
+						{
+							"key": "engine",
+							"value": ""
+						},
+						{
+							"key": "api_key",
+							"value": "yHKp0V7LttN31ID6YBBIHtKyxHe9ySct99jJ3Pr4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
